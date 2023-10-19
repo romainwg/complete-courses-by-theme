@@ -541,62 +541,175 @@ La compréhension des concepts est renforcée lorsqu'elle est mise en applicatio
 
 **Pourquoi Windows-1252?**
 
-Bien que l'UTF-8 soit désormais largement adopté pour l'encodage universel des caractères, Windows-1252 a été largement utilisé dans le passé, notamment pour les applications Windows. Lorsque nous traitons des données historiques ou interactuons avec des systèmes plus anciens, il peut être nécessaire de travailler avec cet encodage.
+Bien que l'UTF-8 soit de nos jours le standard d'encodage universel des caractères, Windows-1252 a longtemps été le choix privilégié, en particulier pour les applications Windows plus anciennes. Il est donc parfois nécessaire de travailler avec cet encodage, surtout lorsqu'il s'agit de données plus anciennes ou d'intégrations avec des systèmes hérités.
 
 **Comment encoder en Windows-1252 en Go?**
 
-En Go, la bibliothèque `golang.org/x/text/encoding/charmap` fournit des outils pour encoder/décoder en Windows-1252. Voici une fonction d'exemple:
+En Go, la bibliothèque `golang.org/x/text/encoding/charmap` offre des méthodes pour encoder et décoder en Windows-1252. Voici comment cela fonctionne à l'aide d'une fonction illustrative:
 
 ```go
+// Importation des packages nécessaires
 import (
  "bytes"
  "log"
  "golang.org/x/text/encoding/charmap"
 )
 
+// encodeWindows1252 prend une chaîne en entrée et la convertit en Windows-1252
 func encodeWindows1252(input string) *bytes.Reader {
+ // Initialisation d'un tampon pour stocker les données encodées
  buf := &bytes.Buffer{}
+ 
+ // Création d'un nouvel encodeur Windows-1252
  writer := charmap.Windows1252.NewEncoder().Writer(buf)
+ 
+ // Écriture de la chaîne d'entrée dans le tampon en utilisant l'encodeur
  _, err := writer.Write([]byte(input))
  if err != nil {
-  log.Println(err)
+  log.Println(err) // Affichage d'une erreur si elle se produit
  }
+ 
+ // Retourne un Reader pour les données encodées
  return bytes.NewReader(buf.Bytes())
 }
 ```
 
-Cette fonction utilise un tampon (`bytes.Buffer`) pour accumuler des données. L'encodeur Windows-1252 est utilisé pour écrire dans ce tampon. Enfin, la fonction renvoie un `bytes.Reader` contenant les données encodées.
+L'essence de cette fonction est de convertir une chaîne en son équivalent Windows-1252. L'utilisation d'un `bytes.Buffer` facilite la manipulation des données en mémoire.
 
 ### 5.2 Manipulation des flux de données avec `io.Reader` et `io.Writer`
 
-L'interface `io.Reader` est l'un des outils les plus puissants de Go, car elle permet de lire des données depuis n'importe quelle source qui implémente cette interface. De même, `io.Writer` permet d'écrire des données vers n'importe quelle destination.
+L'interface `io.Reader` est un outil central en Go pour la lecture de données depuis n'importe quelle source implémentant cette interface. Similairement, `io.Writer` est utilisé pour écrire des données vers une quelconque destination.
 
-**Exemple de la fonction `run`**:
+**Exemple avec la fonction `run`**:
 
-La fonction `run(src io.Reader, dst io.Writer)` est un exemple typique de la puissance de ces interfaces. Elle lit des données depuis une source (`src`), les transforme, puis les écrit dans une destination (`dst`).
+`run(src io.Reader, dst io.Writer)` illustre parfaitement la polyvalence de ces interfaces. Elle prend des données depuis une source (`src`), éventuellement les traite, puis les réachemine vers une destination (`dst`).
 
-L'utilisation de `os.Stdin` comme source (`src`) et `os.Stdout` comme destination (`dst`) dans `run(os.Stdin, os.Stdout)` est un cas courant qui signifie lire depuis l'entrée standard (clavier ou redirection) et écrire vers la sortie standard (console ou redirection).
-
-La fonction `run` est flexible car elle peut fonctionner avec n'importe quelle source ou destination, tant qu'elles satisfont `io.Reader` et `io.Writer`. Cela pourrait être des fichiers, des tampons, des connexions réseau, etc.
+Dans l'appel `run(os.Stdin, os.Stdout)`, `os.Stdin` est utilisé comme source (ce qui signifie une lecture depuis l'entrée standard, comme le clavier) et `os.Stdout` comme destination (pour écrire vers la console). La beauté de cette approche réside dans sa flexibilité : tant que les objets satisfont les interfaces `io.Reader` et `io.Writer`, la fonction peut traiter différents types de sources et de destinations, qu'il s'agisse de fichiers, de tampons, de connexions réseau, etc.
 
 ### 5.3 Cas d'utilisation : Transformation de données CSV
 
-Imaginez avoir un fichier CSV dont les données sont séparées par des `|` et que vous souhaitez le transformer pour enlever certains en-têtes et formater les données. Vous pourriez utiliser une fonction comme `run` pour cela.
+Supposez que vous ayez un fichier CSV où les données sont séparées par des `|`. Vous voulez le retraiter pour enlever certains en-têtes et reformater les données. L'utilisation des flux de données serait parfaite pour une telle tâche.
 
 ```go
+package main
+
+import (
+ "bufio"
+ "fmt"
+ "io"
+ "log"
+ "os"
+ "strings"
+)
+
 func main() {
-    file, _ := os.Open("data.csv")
-    defer file.Close()
+ // Ouverture du fichier CSV en lecture
+ file, err := os.Open("data.csv")
+ if err != nil {
+  log.Fatalf("Erreur à l'ouverture de data.csv: %v", err)
+ }
+ defer closeFile(file, "data.csv")
 
-    outFile, _ := os.Create("transformed.csv")
-    defer outFile.Close()
+ // Ouverture (ou création) d'un fichier en écriture pour le résultat
+ outFile, err := os.Create("transformed.csv")
+ if err != nil {
+  log.Fatalf("Erreur à la création de transformed.csv: %v", err)
+ }
+ defer closeFile(outFile, "transformed.csv")
 
-    // Lire depuis `file`, écrire vers `outFile`
-    run(file, outFile)
+ // Utilisation de la fonction `run` pour transformer le fichier
+ if err := run(file, outFile); err != nil {
+  log.Fatalf("Erreur lors de la transformation : %v", err)
+ }
 }
+
+// closeFile est une fonction utilitaire pour fermer un fichier et loguer une erreur
+func closeFile(f *os.File, filename string) {
+ if err := f.Close(); err != nil {
+  log.Printf("Erreur à la fermeture du fichier %s: %v", filename, err)
+ }
+}
+
+// run lit le contenu de src, effectue une transformation, puis écrit le résultat dans dst
+func run(src io.Reader, dst io.Writer) error {
+ scanner := bufio.NewScanner(src)
+ writer := bufio.NewWriter(dst)
+
+ // Suppression de la première ligne (supposition : c'est un en-tête)
+ if !scanner.Scan() {
+  if err := scanner.Err(); err != nil {
+   return fmt.Errorf("Erreur à la lecture de l'en-tête: %v", err)
+  }
+  // si l'en-tête est manquant ou le fichier est vide
+  return fmt.Errorf("Fichier source vide ou manquant d'en-tête")
+ }
+
+ // Parcours et transformation des lignes suivantes
+ for scanner.Scan() {
+  line := scanner.Text()
+
+  // Validation (ajoutez plus de validations selon vos besoins)
+  if line == "" {
+   continue // sauter les lignes vides
+  }
+
+  // Remplacement des séparateurs | par des ,
+  transformedLine := strings.ReplaceAll(line, "|", ",")
+
+  // Écriture de la ligne transformée dans le fichier de destination
+  if _, err := writer.WriteString(transformedLine + "\n"); err != nil {
+   return fmt.Errorf("Erreur à l'écriture de la ligne transformée : %v", err)
+  }
+ }
+
+ // Gestion des erreurs de scanner
+ if err := scanner.Err(); err != nil {
+  return fmt.Errorf("Erreur à la lecture du fichier source: %v", err)
+ }
+
+ // Assurez-vous que tout est écrit dans dst
+ if err := writer.Flush(); err != nil {
+  return fmt.Errorf("Erreur lors de la finalisation de l'écriture : %v", err)
+ }
+
+ return nil
+}
+
 ```
 
-Ce code ouvre un fichier `data.csv`, puis transforme son contenu et écrit le résultat dans `transformed.csv` en utilisant la fonction `run`.
+En utilisant l'exemple ci-dessus, le contenu de `data.csv` est lu, transformé et le résultat est sauvegardé dans `transformed.csv`.
+
+---
+
+Il serait également possible d'utiliser les redirections d'entrée/sortie standard du shell pour exécuter votre programme.
+Si vous voulez utiliser cette méthode, il y aurait quelques ajustements à faire dans votre code pour qu'il lise de l'entrée standard et écrive sur la sortie standard. Voici comment :
+
+1. Dans la fonction `main`, au lieu d'ouvrir `data.csv` avec `os.Open`, vous utiliserez `os.Stdin` comme source de données.
+2. Au lieu de créer `transformed.csv` avec `os.Create`, vous utiliserez `os.Stdout` comme destination de sortie.
+
+```go
+package main
+
+// ... (importations)
+
+func main() {
+    // Utilisation de la fonction `run` pour transformer les données
+    if err := run(os.Stdin, os.Stdout); err != nil {
+  log.Fatalf("Erreur lors de la transformation : %v", err)
+ }
+}
+
+// ... (reste du code)
+```
+
+```bash
+go run main.go <data.csv >transformed.csv
+```
+
+- `<data.csv` redirige le contenu du fichier `data.csv` vers l'entrée standard (`stdin`) de votre programme.
+- `>transformed.csv` redirige la sortie standard (`stdout`) de votre programme vers le fichier `transformed.csv`.
+
+N'oubliez pas que, dans ce cas, il n'est pas nécessaire de fermer `os.Stdin` ou `os.Stdout`, car ils seront automatiquement fermés lorsque votre programme se terminera.
 
 ### Conclusion du chapitre 5
 
