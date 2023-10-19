@@ -1,61 +1,55 @@
 # Cours : Notions fondamentales sur l'encodage et la manipulation des données en Go
 
-<!-- vscode-markdown-toc -->
-* [Introduction](#introduction)
-* [Chapitre 1 : Comprendre l'encodage](#Chapitre1:Comprendrelencodage)
-  * [1.1 Qu'est-ce que l'encodage?](#Quest-cequelencodage)
-  * [1.2 Windows-1252 : Un encodage populaire](#Windows-1252:Unencodagepopulaire)
-  * [1.3 Comment fonctionne l'encodage en Go?](#CommentfonctionnelencodageenGo)
-  * [1.4 Importance de choisir le bon encodage](#Importancedechoisirlebonencodage)
-  * [Conclusion du Chapitre 1](#ConclusionduChapitre1)
-* [Chapitre 2 : La manipulation de chaînes en Go](#Chapitre2:LamanipulationdechanesenGo)
-  * [2.1 Introduction aux chaînes en Go](#IntroductionauxchanesenGo)
-  * [2.2 La bibliothèque `strings`](#Labibliothquestrings)
-    * [2.2.1 Diviser une chaîne : `strings.Split`](#Diviserunechane:strings.Split)
-    * [2.2.2 Enlever les espaces superflus : `strings.TrimSpace`](#Enleverlesespacessuperflus:strings.TrimSpace)
-  * [2.3 Convertir des chaînes en octets et vice-versa](#Convertirdeschanesenoctetsetvice-versa)
-    * [2.3.1 Convertir une chaîne en slice d'octets](#Convertirunechaneenslicedoctets)
-    * [2.3.2 Convertir une slice d'octets en chaîne](#Convertiruneslicedoctetsenchane)
-  * [2.4 Quelques autres fonctions utiles de la bibliothèque `strings`](#Quelquesautresfonctionsutilesdelabibliothquestrings)
-    * [2.4.1 Rechercher une sous-chaîne : `strings.Contains`](#Rechercherunesous-chane:strings.Contains)
-    * [2.4.2 Remplacer des sous-chaînes : `strings.Replace`](#Remplacerdessous-chanes:strings.Replace)
-    * [2.4.3 Convertir en majuscules ou en minuscules : `strings.ToUpper` et `strings.ToLower`](#Convertirenmajusculesouenminuscules:strings.ToUpperetstrings.ToLower)
-  * [2.5 Conclusion](#Conclusion)
-* [Chapitre 3 : Les tampons (Buffers) en Go](#Chapitre3:LestamponsBuffersenGo)
-  * [3.1 Qu'est-ce qu'un tampon (Buffer)?](#Quest-cequuntamponBuffer)
-  * [3.2 Création d'un tampon](#Crationduntampon)
-  * [3.3 Écriture dans un tampon](#crituredansuntampon)
-  * [3.4 Lecture d'un tampon](#Lectureduntampon)
-  * [3.5 Autres opérations utiles](#Autresoprationsutiles)
-  * [3.6 Cas d'utilisation](#Casdutilisation)
-    * [Traitement de fichiers](#Traitementdefichiers)
-    * [Construction de chaînes](#Constructiondechanes)
-  * [Conclusion chapitre 3](#Conclusionchapitre3)
-* [Chapitre 4 : Lire et écrire des flux de données avec `io.Reader` et `io.Writer`](#Chapitre4:Lireetcriredesfluxdedonnesavecio.Readeretio.Writer)
-  * [4.1 Les interfaces fondamentales : `io.Reader` et `io.Writer`](#Lesinterfacesfondamentales:io.Readeretio.Writer)
-    * [4.1.1 `io.Reader`](#io.Reader)
-    * [4.1.2 `io.Writer`](#io.Writer)
-  * [4.2 Cas d'utilisation courants](#Casdutilisationcourants)
-    * [4.2.1 Lire un fichier](#Lireunfichier)
-    * [4.2.2 Écrire dans un fichier](#criredansunfichier)
-    * [4.2.3 Copier des données](#Copierdesdonnes)
-  * [4.3 Entrée et sortie standard : `os.Stdin` et `os.Stdout`](#Entreetsortiestandard:os.Stdinetos.Stdout)
-    * [4.3.1 `os.Stdin`](#os.Stdin)
-    * [4.3.2 `os.Stdout`](#os.Stdout)
-  * [4.4 Combinaison de `Reader` et `Writer`](#CombinaisondeReaderetWriter)
-  * [Conclusion chapitre 4](#Conclusionchapitre4)
-* [Chapitre 5 : Application pratique - Encodage et manipulation de données](#Chapitre5:Applicationpratique-Encodageetmanipulationdedonnes)
-  * [5.1 Encodage en Windows-1252](#EncodageenWindows-1252)
-  * [5.2 Manipulation des flux de données avec `io.Reader` et `io.Writer`](#Manipulationdesfluxdedonnesavecio.Readeretio.Writer)
-  * [5.3 Cas d'utilisation : Transformation de données CSV](#Casdutilisation:TransformationdedonnesCSV)
-  * [Conclusion du chapitre 5](#Conclusionduchapitre5)
-* [Conclusion générale](#Conclusiongnrale)
-
-<!-- vscode-markdown-toc-config
-	numbering=false
-	autoSave=false
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+- [Cours : Notions fondamentales sur l'encodage et la manipulation des données en Go](#cours--notions-fondamentales-sur-lencodage-et-la-manipulation-des-données-en-go)
+  - [Introduction](#introduction)
+  - [Chapitre 1 : Comprendre l'encodage](#chapitre-1--comprendre-lencodage)
+    - [1.1 Qu'est-ce que l'encodage?](#11-quest-ce-que-lencodage)
+    - [1.2 Windows-1252 : Un encodage populaire](#12-windows-1252--un-encodage-populaire)
+    - [1.3 Comment fonctionne l'encodage en Go?](#13-comment-fonctionne-lencodage-en-go)
+    - [1.4 Importance de choisir le bon encodage](#14-importance-de-choisir-le-bon-encodage)
+    - [Conclusion du Chapitre 1](#conclusion-du-chapitre-1)
+  - [Chapitre 2 : La manipulation de chaînes en Go](#chapitre-2--la-manipulation-de-chaînes-en-go)
+    - [2.1 Introduction aux chaînes en Go](#21-introduction-aux-chaînes-en-go)
+    - [2.2 La bibliothèque `strings`](#22-la-bibliothèque-strings)
+      - [2.2.1 Diviser une chaîne : `strings.Split`](#221-diviser-une-chaîne--stringssplit)
+      - [2.2.2 Enlever les espaces superflus : `strings.TrimSpace`](#222-enlever-les-espaces-superflus--stringstrimspace)
+    - [2.3 Convertir des chaînes en octets et vice-versa](#23-convertir-des-chaînes-en-octets-et-vice-versa)
+      - [2.3.1 Convertir une chaîne en slice d'octets](#231-convertir-une-chaîne-en-slice-doctets)
+      - [2.3.2 Convertir une slice d'octets en chaîne](#232-convertir-une-slice-doctets-en-chaîne)
+    - [2.4 Quelques autres fonctions utiles de la bibliothèque `strings`](#24-quelques-autres-fonctions-utiles-de-la-bibliothèque-strings)
+      - [2.4.1 Rechercher une sous-chaîne : `strings.Contains`](#241-rechercher-une-sous-chaîne--stringscontains)
+      - [2.4.2 Remplacer des sous-chaînes : `strings.Replace`](#242-remplacer-des-sous-chaînes--stringsreplace)
+      - [2.4.3 Convertir en majuscules ou en minuscules : `strings.ToUpper` et `strings.ToLower`](#243-convertir-en-majuscules-ou-en-minuscules--stringstoupper-et-stringstolower)
+    - [2.5 Conclusion](#25-conclusion)
+  - [Chapitre 3 : Les tampons (Buffers) en Go](#chapitre-3--les-tampons-buffers-en-go)
+    - [3.1 Qu'est-ce qu'un tampon (Buffer)?](#31-quest-ce-quun-tampon-buffer)
+    - [3.2 Création d'un tampon](#32-création-dun-tampon)
+    - [3.3 Écriture dans un tampon](#33-écriture-dans-un-tampon)
+    - [3.4 Lecture d'un tampon](#34-lecture-dun-tampon)
+    - [3.5 Autres opérations utiles](#35-autres-opérations-utiles)
+    - [3.6 Cas d'utilisation](#36-cas-dutilisation)
+      - [Traitement de fichiers](#traitement-de-fichiers)
+      - [Construction de chaînes](#construction-de-chaînes)
+    - [Conclusion chapitre 3](#conclusion-chapitre-3)
+  - [Chapitre 4 : Lire et écrire des flux de données avec `io.Reader` et `io.Writer`](#chapitre-4--lire-et-écrire-des-flux-de-données-avec-ioreader-et-iowriter)
+    - [4.1 Les interfaces fondamentales : `io.Reader` et `io.Writer`](#41-les-interfaces-fondamentales--ioreader-et-iowriter)
+      - [4.1.1 `io.Reader`](#411-ioreader)
+      - [4.1.2 `io.Writer`](#412-iowriter)
+    - [4.2 Cas d'utilisation courants](#42-cas-dutilisation-courants)
+      - [4.2.1 Lire un fichier](#421-lire-un-fichier)
+      - [4.2.2 Écrire dans un fichier](#422-écrire-dans-un-fichier)
+      - [4.2.3 Copier des données](#423-copier-des-données)
+    - [4.3 Entrée et sortie standard : `os.Stdin` et `os.Stdout`](#43-entrée-et-sortie-standard--osstdin-et-osstdout)
+      - [4.3.1 `os.Stdin`](#431-osstdin)
+      - [4.3.2 `os.Stdout`](#432-osstdout)
+    - [4.4 Combinaison de `Reader` et `Writer`](#44-combinaison-de-reader-et-writer)
+    - [Conclusion chapitre 4](#conclusion-chapitre-4)
+  - [Chapitre 5 : Application pratique - Encodage et manipulation de données](#chapitre-5--application-pratique---encodage-et-manipulation-de-données)
+    - [5.1 Encodage en Windows-1252](#51-encodage-en-windows-1252)
+    - [5.2 Manipulation des flux de données avec `io.Reader` et `io.Writer`](#52-manipulation-des-flux-de-données-avec-ioreader-et-iowriter)
+    - [5.3 Cas d'utilisation : Transformation de données CSV](#53-cas-dutilisation--transformation-de-données-csv)
+    - [Conclusion du chapitre 5](#conclusion-du-chapitre-5)
+  - [Conclusion générale](#conclusion-générale)
 
 ## Introduction
 
@@ -81,9 +75,9 @@ Windows-1252, parfois appelé simplement "ANSI", est une page de code largement 
 
 **Caractéristiques clés**:
 
-* Supporte la majorité des caractères utilisés dans les langues occidentales.
-* Ressemble à ISO-8859-1 mais contient des caractères supplémentaires entre 128 et 159, là où ISO-8859-1 a des caractères de contrôle.
-* Diffère de l'UTF-8, qui est un encodage universel capable de représenter tous les caractères de tous les scripts du monde.
+- Supporte la majorité des caractères utilisés dans les langues occidentales.
+- Ressemble à ISO-8859-1 mais contient des caractères supplémentaires entre 128 et 159, là où ISO-8859-1 a des caractères de contrôle.
+- Diffère de l'UTF-8, qui est un encodage universel capable de représenter tous les caractères de tous les scripts du monde.
 
 **Cas d'utilisation**:
 
@@ -268,10 +262,10 @@ Après cette opération, seulement ", World!" reste dans le tampon.
 
 ### 3.5 Autres opérations utiles
 
-* `buf.Bytes()`: Renvoie une slice d'octets avec le contenu actuel du tampon sans le supprimer.
-* `buf.String()`: Convertit le contenu actuel du tampon en une chaîne.
-* `buf.Len()`: Renvoie le nombre d'octets non lus dans le tampon.
-* `buf.Reset()`: Vide le tampon.
+- `buf.Bytes()`: Renvoie une slice d'octets avec le contenu actuel du tampon sans le supprimer.
+- `buf.String()`: Convertit le contenu actuel du tampon en une chaîne.
+- `buf.Len()`: Renvoie le nombre d'octets non lus dans le tampon.
+- `buf.Reset()`: Vide le tampon.
 
 ### 3.6 Cas d'utilisation
 
