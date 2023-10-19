@@ -41,6 +41,10 @@
       - [4.2.3 Copier des données](#423-copier-des-données)
     - [4.3 Entrée et sortie standard : `os.Stdin` et `os.Stdout`](#43-entrée-et-sortie-standard--osstdin-et-osstdout)
       - [4.3.1 `os.Stdin`](#431-osstdin)
+        - [Parenthèse - Buffer niveau OS](#parenthèse---buffer-niveau-os)
+        - [Parenthèse - Golang buffer bloquant/non bloquant](#parenthèse---golang-buffer-bloquantnon-bloquant)
+          - [1. Mode Bloquant](#1-mode-bloquant)
+          - [2. Mode Non Bloquant](#2-mode-non-bloquant)
       - [4.3.2 `os.Stdout`](#432-osstdout)
     - [4.4 Combinaison de `Reader` et `Writer`](#44-combinaison-de-reader-et-writer)
     - [Conclusion chapitre 4](#conclusion-chapitre-4)
@@ -386,6 +390,102 @@ fmt.Print("Entrez du texte : ")
 text, _ := reader.ReadString('\n')
 fmt.Println("Vous avez écrit :", text)
 ```
+
+##### Parenthèse - Buffer niveau OS
+
+La fonctionnalité de blocage, en particulier lors de la lecture de l'entrée de l'utilisateur ou d'autres sources de données, est généralement implémentée au niveau du système d'exploitation. Voici une explication détaillée de la manière dont cela fonctionne :
+
+1. **Appels système**:
+
+   Lorsqu'un programme souhaite lire des données, par exemple depuis `stdin`, il effectue un appel système. Un appel système est une interface permettant à un programme de demander un service au noyau du système d'exploitation.
+
+2. **Noyau et descripteurs de fichier**:
+
+   Dans la plupart des systèmes d'exploitation de type UNIX, tout est traité comme un fichier, y compris `stdin`. Lorsqu'un programme demande à lire depuis `stdin`, il demande en réalité à lire depuis un descripteur de fichier qui est associé à `stdin`.
+
+3. **État de blocage**:
+
+   Si les données demandées ne sont pas encore disponibles (par exemple, si l'utilisateur n'a pas encore appuyé sur "Entrée"), le noyau met le processus en état de "blocage" ou "sommeil". Cela signifie que le processus est mis en pause et n'utilise pas activement le CPU.
+
+4. **Réveil du processus**:
+
+   Lorsque les données deviennent disponibles (par exemple, lorsque l'utilisateur appuie sur "Entrée"), le noyau réveille le processus. Le programme reprend son exécution à partir du point où il s'était arrêté (après l'appel système) et peut maintenant lire les données disponibles.
+
+5. **Mode non bloquant**:
+
+   Il est également possible de configurer des descripteurs de fichier pour qu'ils fonctionnent en mode non bloquant. Dans ce mode, si les données ne sont pas disponibles, l'appel système renverra immédiatement une erreur plutôt que de bloquer. Cela peut être utile pour des applications qui doivent effectuer d'autres tâches en attendant les données.
+
+6. **Multiplexage d'entrée/sortie**:
+
+   Dans des situations où un programme doit surveiller plusieurs sources de données simultanément (par exemple, plusieurs connexions réseau), des techniques de multiplexage d'entrée/sortie comme `select()`, `poll()`, ou `epoll()` (sur Linux) peuvent être utilisées. Ces fonctions permettent à un programme de surveiller plusieurs descripteurs de fichier simultanément et de déterminer lesquels sont prêts pour la lecture ou l'écriture sans blocage.
+
+En résumé, le blocage lors de la lecture est géré par le noyau du système d'exploitation. Lorsqu'un programme demande à lire des données et que ces données ne sont pas encore disponibles, le noyau met le programme en état de blocage jusqu'à ce que les données soient prêtes. Cette approche permet d'économiser les ressources CPU, car le programme n'est pas en train de "tourner en boucle" activement en attendant les données.
+
+##### Parenthèse - Golang buffer bloquant/non bloquant
+
+Le langage Go (ou Golang) offre une prise en charge native de la concurrence grâce aux goroutines, ce qui permet d'implémenter facilement des scénarios bloquants et non bloquants. Lorsqu'il s'agit de lire des buffers ou d'autres opérations d'entrée/sortie, Go utilise un modèle de blocage par défaut, mais avec l'utilisation des goroutines, on peut facilement créer des scénarios non bloquants.
+
+###### 1. Mode Bloquant
+
+Dans cet exemple, nous utilisons la fonction `ReadString` de la bibliothèque `bufio` pour lire une ligne de `os.Stdin`. Cette fonction bloquera jusqu'à ce qu'elle rencontre un `\n` (lorsque vous appuyez sur "Entrée") :
+
+```go
+package main
+
+import (
+ "bufio"
+ "fmt"
+ "os"
+)
+
+func main() {
+ reader := bufio.NewReader(os.Stdin)
+ fmt.Print("Entrez quelque chose : ")
+ text, _ := reader.ReadString('\n')
+ fmt.Printf("Vous avez écrit : %s", text)
+}
+```
+
+Lorsque vous exécutez ce programme, il attendra en mode bloquant que vous entriez une ligne de texte.
+
+###### 2. Mode Non Bloquant
+
+Dans cet exemple, nous utilisons les goroutines pour lire de `os.Stdin` de manière non bloquante. Cela signifie que le programme principal peut continuer à s'exécuter pendant que nous attendons une entrée:
+
+```go
+package main
+
+import (
+ "bufio"
+ "fmt"
+ "os"
+ "time"
+)
+
+func readInput(output chan<- string) {
+ reader := bufio.NewReader(os.Stdin)
+ fmt.Print("Entrez quelque chose : ")
+ text, _ := reader.ReadString('\n')
+ output <- text
+}
+
+func main() {
+ inputChannel := make(chan string)
+
+ go readInput(inputChannel)
+
+ select {
+ case text := <-inputChannel:
+  fmt.Printf("Vous avez écrit : %s", text)
+ case <-time.After(5 * time.Second):
+  fmt.Println("Temps écoulé! Aucune entrée reçue.")
+ }
+}
+```
+
+Lorsque vous exécutez ce programme, il attendra une entrée pendant 5 secondes. Si vous entrez quelque chose en moins de 5 secondes, il affichera le texte. Sinon, il affichera "Temps écoulé! Aucune entrée reçue." et se terminera.
+
+Dans cet exemple, nous utilisons une goroutine pour lire l'entrée et un `select` avec un timer pour créer un délai d'expiration. C'est un exemple de la manière dont Go peut être utilisé pour créer un comportement non bloquant tout en conservant un code relativement simple et clair.
 
 #### 4.3.2 `os.Stdout`
 
