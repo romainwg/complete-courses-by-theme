@@ -16,6 +16,8 @@ Les Conventional Commits sont un système de nommage des commits qui ajoute de l
   - [Bonnes Pratiques](#bonnes-pratiques)
   - [Avantages des Conventional Commits](#avantages-des-conventional-commits)
   - [Exemples](#exemples)
+  - [Utilisation dans VSCode avec vscode-conventional-commits](#utilisation-dans-vscode-avec-vscode-conventional-commits)
+    - [Utilisation](#utilisation)
   - [Règles de Linting avec `@commitlint/config-conventional`](#règles-de-linting-avec-commitlintconfig-conventional)
     - [Règles de linting - Conventional commits](#règles-de-linting---conventional-commits)
 
@@ -126,6 +128,18 @@ En suivant ces lignes directrices, vos messages de commit seront non seulement i
    Reviewed-by: Z
    Refs: #123
    ```
+
+## Utilisation dans VSCode avec [vscode-conventional-commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
+
+L'extension "Conventional Commits" pour Visual Studio Code aide à formuler des messages de commit conformes aux Conventional Commits.
+
+⚠️ Par défault, l'outil commit automatiquement après avoir spécifié le conventional commit.
+
+### Utilisation
+
+- Accédez à l'extension de deux manières :
+  1. Commande + Shift + P ou Ctrl + Shift + P, entrez "Conventional Commits" et appuyez sur Entrée.
+  2. Cliquez sur l'icône dans le menu Source Control.
 
 ## Règles de Linting avec `@commitlint/config-conventional`
 
