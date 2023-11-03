@@ -1,10 +1,21 @@
+# Tutoriel Complété sur le Conventional Branch Naming avec Git/GitFlow
 
 <!-- https://stackoverflow.com/a/6065944 -->
 <!-- https://idiv-biodiversity.github.io/git-knowledge-base/branch-naming-conventions.html -->
 
-# Tutoriel Complété sur le Conventional Branch Naming avec Git/GitFlow
-
 Nous avons déjà couvert les branches de flux de code et les branches temporaires. Maintenant, intégrons des conventions supplémentaires de nommage des branches pour une meilleure organisation et gestion des workflows.
+
+- [Tutoriel Complété sur le Conventional Branch Naming avec Git/GitFlow](#tutoriel-complété-sur-le-conventional-branch-naming-avec-gitgitflow)
+  - [Conventions de Nommage des Branches](#conventions-de-nommage-des-branches)
+    - [Utiliser des Tokens de Groupement](#utiliser-des-tokens-de-groupement)
+    - [Tokens Courts et Bien Définis](#tokens-courts-et-bien-définis)
+    - [Utiliser des Slashs pour Séparer les Parties](#utiliser-des-slashs-pour-séparer-les-parties)
+    - [Éviter les Nombres Nus](#éviter-les-nombres-nus)
+    - [Éviter les Noms Longs et Descriptifs pour les Branches à Long Terme](#éviter-les-noms-longs-et-descriptifs-pour-les-branches-à-long-terme)
+  - [Exemples de Workflow avec Tokens et Groupement](#exemples-de-workflow-avec-tokens-et-groupement)
+  - [Bonnes Pratiques Supplémentaires](#bonnes-pratiques-supplémentaires)
+
+---
 
 ## Conventions de Nommage des Branches
 
