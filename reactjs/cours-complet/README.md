@@ -8,37 +8,37 @@
     - [Section 1.4 : Exploration de l'Écosystème React](#section-14--exploration-de-lécosystème-react)
   - [Section 2 : Les Fondamentaux de ReactJS](#section-2--les-fondamentaux-de-reactjs)
     - [Section 2.1 : JSX et Composants](#section-21--jsx-et-composants)
-      - [Théorie](#théorie)
-      - [Exemple](#exemple)
+      - [2.1 Théorie](#21-théorie)
+      - [2.1 Exemple](#21-exemple)
       - [Exercice](#exercice)
     - [Section 2.2 : État (State) et Cycle de Vie](#section-22--état-state-et-cycle-de-vie)
-      - [Théorie](#théorie-1)
-      - [Exemple](#exemple-1)
-      - [Exercice](#exercice-1)
+      - [2.2 Théorie](#22-théorie)
+      - [2.2 Exemple](#22-exemple)
+      - [2.2 Exercice](#22-exercice)
     - [Section 2.3 : Gestion des Événements](#section-23--gestion-des-événements)
-      - [Théorie](#théorie-2)
-      - [Exemple](#exemple-2)
-      - [Exercice](#exercice-2)
+      - [2.3 Théorie](#23-théorie)
+      - [2.3 Exemple](#23-exemple)
+      - [2.3 Exercice](#23-exercice)
   - [Section 3 : Approfondissement de ReactJS](#section-3--approfondissement-de-reactjs)
     - [Section 3.1 : Props et Communication entre Composants](#section-31--props-et-communication-entre-composants)
     - [Section 3.2 : Gestion de l’État Global avec Context API](#section-32--gestion-de-létat-global-avec-context-api)
     - [Section 3.3 : Routing avec React Router](#section-33--routing-avec-react-router)
   - [Section 4 : Hooks et Patterns Avancés](#section-4--hooks-et-patterns-avancés)
     - [Section 4.1 : Hooks Personnalisés](#section-41--hooks-personnalisés)
-      - [Théorie](#théorie-3)
-      - [Exemple](#exemple-3)
-      - [Explications](#explications)
-      - [Exercice](#exercice-3)
+      - [4.1 Théorie](#41-théorie)
+      - [4.1 Exemple](#41-exemple)
+      - [4.1 Explications](#41-explications)
+      - [4.1 Exercice](#41-exercice)
     - [Section 4.2 : Gestion des Effets avec useEffect](#section-42--gestion-des-effets-avec-useeffect)
-      - [Théorie](#théorie-4)
-      - [Exemple](#exemple-4)
-      - [Explications](#explications-1)
-      - [Exercice](#exercice-4)
+      - [4.2 Théorie](#42-théorie)
+      - [4.2 Exemple](#42-exemple)
+      - [4.2 Explications](#42-explications)
+      - [4.2 Exercice](#42-exercice)
     - [Section 4.3 : Contexte Avancé et Optimisation des Performances](#section-43--contexte-avancé-et-optimisation-des-performances)
-      - [Théorie](#théorie-5)
-      - [Exemple](#exemple-5)
-      - [Explications](#explications-2)
-      - [Exercice](#exercice-5)
+      - [4.3 Théorie](#43-théorie)
+      - [4.3 Exemple](#43-exemple)
+      - [4.3 Explications](#43-explications)
+      - [4.3 Exercice](#43-exercice)
   - [Section 5 : React et les Appels API](#section-5--react-et-les-appels-api)
     - [Section 5.1 : Fetch et Axios pour les Appels API](#section-51--fetch-et-axios-pour-les-appels-api)
     - [Section 5.2 : Gestion des États de Chargement et Erreurs](#section-52--gestion-des-états-de-chargement-et-erreurs)
@@ -50,30 +50,30 @@
       - [Section 6.1.3 : Stratégies de Mocking et de Simulations d'Événements](#section-613--stratégies-de-mocking-et-de-simulations-dévénements)
     - [Section 6.2 : Bonnes Pratiques en ReactJS](#section-62--bonnes-pratiques-en-reactjs)
       - [Section 6.2.1 : Structure et Organisation du Projet](#section-621--structure-et-organisation-du-projet)
-        - [Théorie](#théorie-6)
-        - [Exemple](#exemple-6)
-        - [Explication](#explication)
-        - [Exercice](#exercice-6)
+        - [6.2.1 Théorie](#621-théorie)
+        - [6.2.1 Exemple](#621-exemple)
+        - [6.2.1 Explication](#621-explication)
+        - [6.2.1 Exercice](#621-exercice)
       - [Section 6.2.2 : Réutilisation des Composants et Props](#section-622--réutilisation-des-composants-et-props)
-        - [Théorie](#théorie-7)
-        - [Exemple](#exemple-7)
-        - [Explication](#explication-1)
-        - [Exercice](#exercice-7)
+        - [6.2.2 Théorie](#622-théorie)
+        - [6.2.2 Exemple](#622-exemple)
+        - [6.2.2 Explication](#622-explication)
+        - [6.2.2 Exercice](#622-exercice)
       - [Section 6.2.3 : Gestion Efficace des États et Performance](#section-623--gestion-efficace-des-états-et-performance)
-        - [Théorie](#théorie-8)
-        - [Exemple](#exemple-8)
-        - [Explication](#explication-2)
-        - [Exercice](#exercice-8)
+        - [6.2.3 Théorie](#623-théorie)
+        - [6.2.3 Exemple](#623-exemple)
+        - [6.2.3 Explication](#623-explication)
+        - [6.2.3 Exercice](#623-exercice)
       - [Section 6.2.4 : L’Importance des Tests](#section-624--limportance-des-tests)
-        - [Théorie](#théorie-9)
-        - [Exemple](#exemple-9)
-        - [Explication](#explication-3)
-        - [Exercice](#exercice-9)
+        - [6.2.4 Théorie](#624-théorie)
+        - [6.2.4 Exemple](#624-exemple)
+        - [6.2.4 Explication](#624-explication)
+        - [6.2.4 Exercice](#624-exercice)
       - [Section 6.2.5 : Bonnes Pratiques de Codage](#section-625--bonnes-pratiques-de-codage)
-        - [Théorie](#théorie-10)
-        - [Exemple](#exemple-10)
-        - [Explication](#explication-4)
-        - [Exercice](#exercice-10)
+        - [6.2.5 Théorie](#625-théorie)
+        - [6.2.5 Exemple](#625-exemple)
+        - [6.2.5 Explication](#625-explication)
+        - [6.2.5 Exercice](#625-exercice)
     - [Section 6.3 : Déploiement d'une Application React](#section-63--déploiement-dune-application-react)
       - [Section 6.3.1 : Préparation au Déploiement](#section-631--préparation-au-déploiement)
       - [Section 6.3.2 : Choix de la Plateforme de Déploiement](#section-632--choix-de-la-plateforme-de-déploiement)
@@ -81,66 +81,54 @@
   - [Section 7 : Préparation à l'Entretien d'Embauche pour Développeur ReactJS](#section-7--préparation-à-lentretien-dembauche-pour-développeur-reactjs)
     - [Section 7.1 : Questions Fréquentes en Entretien](#section-71--questions-fréquentes-en-entretien)
       - [Section 7.1.1 : Comprendre JSX](#section-711--comprendre-jsx)
-        - [Théorie](#théorie-11)
-        - [Exemple de Question](#exemple-de-question)
+        - [7.1.1 Théorie](#711-théorie)
+        - [7.1.1 Exemple de Question](#711-exemple-de-question)
       - [Section 7.1.2 : Composants, État et Props](#section-712--composants-état-et-props)
-        - [Théorie](#théorie-12)
-        - [Exemple de Question](#exemple-de-question-1)
+        - [7.1.2 Théorie](#712-théorie)
+        - [7.1.2 Exemple de Question](#712-exemple-de-question)
       - [Section 7.1.3 : Lifecycle et Hooks](#section-713--lifecycle-et-hooks)
-        - [Théorie](#théorie-13)
-        - [Exemple de Question](#exemple-de-question-2)
+        - [7.1.3 Théorie](#713-théorie)
+        - [7.1.3 Exemple de Question](#713-exemple-de-question)
       - [Section 7.1.4 : Gestion de l'État et Patterns](#section-714--gestion-de-létat-et-patterns)
-        - [Théorie](#théorie-14)
-        - [Exemple de Question](#exemple-de-question-3)
+        - [7.1.4 Théorie](#714-théorie)
+        - [7.1.4 Exemple de Question](#714-exemple-de-question)
       - [Section 7.1.5 : Performances et Optimisation](#section-715--performances-et-optimisation)
-        - [Théorie](#théorie-15)
-        - [Exemple de Question](#exemple-de-question-4)
-      - [Section 7.1.2 : Composants, État et Props](#section-712--composants-état-et-props-1)
-        - [Théorie](#théorie-16)
-        - [Exemple de Question](#exemple-de-question-5)
-      - [Section 7.1.3 : Lifecycle et Hooks](#section-713--lifecycle-et-hooks-1)
-        - [Théorie](#théorie-17)
-        - [Exemple de Question](#exemple-de-question-6)
-      - [Section 7.1.4 : Gestion de l'État et Patterns](#section-714--gestion-de-létat-et-patterns-1)
-        - [Théorie](#théorie-18)
-        - [Exemple de Question](#exemple-de-question-7)
-      - [Section 7.1.5 : Performances et Optimisation](#section-715--performances-et-optimisation-1)
-        - [Théorie](#théorie-19)
-        - [Exemple de Question](#exemple-de-question-8)
+        - [7.1.5 Théorie](#715-théorie)
+        - [Exemple de Question](#exemple-de-question)
     - [Section 7.2 : Cas d'Usage et Projets à Présenter](#section-72--cas-dusage-et-projets-à-présenter)
-      - [Théorie](#théorie-20)
+      - [7.2  Théorie](#72--théorie)
       - [Section 7.2.1 : Application E-commerce](#section-721--application-e-commerce)
-        - [Description du Projet](#description-du-projet)
-        - [Points Clés à Discuter](#points-clés-à-discuter)
-        - [Exemple d'Implémentation](#exemple-dimplémentation)
-        - [Exercice](#exercice-11)
+        - [7.2.1 Description du Projet](#721-description-du-projet)
+        - [7.2.1 Points Clés à Discuter](#721-points-clés-à-discuter)
+        - [7.2.1 Exemple d'Implémentation](#721-exemple-dimplémentation)
+        - [7.2.1 Exercice](#721-exercice)
       - [Section 7.2.2 : Application de Gestion de Tâches](#section-722--application-de-gestion-de-tâches)
-        - [Description du Projet](#description-du-projet-1)
-        - [Points Clés à Discuter](#points-clés-à-discuter-1)
-        - [Exemple d'Implémentation](#exemple-dimplémentation-1)
-        - [Exercice](#exercice-12)
+        - [7.2.2 Description du Projet](#722-description-du-projet)
+        - [7.2.2 Points Clés à Discuter](#722-points-clés-à-discuter)
+        - [7.2.2 Exemple d'Implémentation](#722-exemple-dimplémentation)
+        - [7.2.2 Exercice](#722-exercice)
       - [Conseil Final](#conseil-final)
     - [Section 7.3 : Compréhension des Subtilités de ReactJS et Bonnes Pratiques](#section-73--compréhension-des-subtilités-de-reactjs-et-bonnes-pratiques)
       - [Section 7.3.1 : La Composition par Rapport à l'Héritage](#section-731--la-composition-par-rapport-à-lhéritage)
-        - [Théorie](#théorie-21)
-        - [Exemple](#exemple-11)
-        - [Exercice](#exercice-13)
+        - [7.3.1 Théorie](#731-théorie)
+        - [7.3.1 Exemple](#731-exemple)
+        - [7.3.1 Exercice](#731-exercice)
       - [Section 7.3.2 : Immutabilité de l’État](#section-732--immutabilité-de-létat)
-        - [Théorie](#théorie-22)
-        - [Exemple](#exemple-12)
-        - [Exercice](#exercice-14)
+        - [7.3.2 Théorie](#732-théorie)
+        - [7.3.2 Exemple](#732-exemple)
+        - [7.3.2 Exercice](#732-exercice)
       - [Section 7.3.3 : Utilisation de Fragments et d'Attributs Clés](#section-733--utilisation-de-fragments-et-dattributs-clés)
-        - [Théorie](#théorie-23)
-        - [Exemple](#exemple-13)
-        - [Exercice](#exercice-15)
+        - [7.3.3 Théorie](#733-théorie)
+        - [7.3.3 Exemple](#733-exemple)
+        - [7.3.3 Exercice](#733-exercice)
       - [Section 7.3.4 : Optimisation des Performances avec React.memo et useCallback](#section-734--optimisation-des-performances-avec-reactmemo-et-usecallback)
-        - [Théorie](#théorie-24)
-        - [Exemple](#exemple-14)
-        - [Exercice](#exercice-16)
+        - [7.3.4 Théorie](#734-théorie)
+        - [7.3.4 Exemple](#734-exemple)
+        - [7.3.4 Exercice](#734-exercice)
       - [Section 7.3.5 : Séparation des Préoccupations](#section-735--séparation-des-préoccupations)
-        - [Théorie](#théorie-25)
-        - [Exemple](#exemple-15)
-        - [Exercice](#exercice-17)
+        - [7.3.5 Théorie](#735-théorie)
+        - [7.3.5 Exemple](#735-exemple)
+        - [7.3.5 Exercice](#735-exercice)
 
 ---
 
@@ -174,7 +162,7 @@
 - **Exemple :**
   - Structure typique :
 
-    ```
+    ```text
     mon-app-react/
     ├── node_modules/
     ├── public/
@@ -222,14 +210,14 @@ Ce premier chapitre pose les bases de ReactJS et prépare le terrain pour une ex
 
 ### Section 2.1 : JSX et Composants
 
-#### Théorie
+#### 2.1 Théorie
 
 - **JSX :** JSX est une extension syntaxique de JavaScript utilisée avec React pour décrire ce que l'interface utilisateur devrait ressembler. JSX ressemble à du HTML, mais il permet d'incorporer des expressions JavaScript directement.
 - **Composants :** Les composants sont les briques de base des applications React. Ils encapsulent une partie de l'interface utilisateur. Il existe deux types de composants :
   - **Composants Fonctionnels :** Ils sont écrits sous forme de fonctions JavaScript et peuvent utiliser les hooks pour gérer l'état et les effets secondaires.
   - **Composants de Classe :** Ils sont écrits sous forme de classes et utilisent les méthodes de cycle de vie pour gérer l'état et les effets secondaires.
 
-#### Exemple
+#### 2.1 Exemple
 
 - **JSX :**
 
@@ -253,12 +241,12 @@ Ce premier chapitre pose les bases de ReactJS et prépare le terrain pour une ex
 
 ### Section 2.2 : État (State) et Cycle de Vie
 
-#### Théorie
+#### 2.2 Théorie
 
 - **État (State) :** L'état est un objet qui représente une partie de l'interface utilisateur qui peut changer au fil du temps. Chaque composant peut avoir son propre état.
 - **Cycle de Vie :** Les composants de classe en React ont plusieurs méthodes de cycle de vie qui sont appelées à différentes étapes de la vie d'un composant, telles que `componentDidMount`, `componentDidUpdate`, et `componentWillUnmount`.
 
-#### Exemple
+#### 2.2 Exemple
 
 - **État avec un Composant Fonctionnel :**
 
@@ -274,7 +262,7 @@ Ce premier chapitre pose les bases de ReactJS et prépare le terrain pour une ex
   }
   ```
 
-#### Exercice
+#### 2.2 Exercice
 
 - Créez une horloge numérique qui affiche l'heure actuelle et se met à jour chaque seconde. Utilisez le hook `useState` pour l'état et `useEffect` pour mettre à jour l'heure.
 
@@ -282,11 +270,11 @@ Ce premier chapitre pose les bases de ReactJS et prépare le terrain pour une ex
 
 ### Section 2.3 : Gestion des Événements
 
-#### Théorie
+#### 2.3 Théorie
 
 - En React, les événements sont gérés en utilisant des propriétés spéciales sur les éléments JSX. Ces propriétés ont des noms comme `onClick`, `onChange`, etc. Les gestionnaires d'événements sont des fonctions JavaScript.
 
-#### Exemple
+#### 2.3 Exemple
 
 - **Bouton avec un Gestionnaire d'Événements :**
 
@@ -300,7 +288,7 @@ Ce premier chapitre pose les bases de ReactJS et prépare le terrain pour une ex
   }
   ```
 
-#### Exercice
+#### 2.3 Exercice
 
 - Créez un formulaire d'inscription avec des champs pour le nom, l'email, et un mot de passe. Ajoutez des gestionnaires d'événements pour valider les données entrées par l'utilisateur avant de soumettre le formulaire. Affichez des messages d'erreur appropriés si les données ne sont pas valides.
 
@@ -411,11 +399,11 @@ Ce premier chapitre pose les bases de ReactJS et prépare le terrain pour une ex
 
 ### Section 4.1 : Hooks Personnalisés
 
-#### Théorie
+#### 4.1 Théorie
 
 Les hooks personnalisés permettent de créer des fonctions réutilisables qui peuvent manipuler l’état ou le cycle de vie d’un composant. Ils offrent une façon d'extraire la logique des composants pour une meilleure modularité et réutilisation.
 
-#### Exemple
+#### 4.1 Exemple
 
 Création d’un hook personnalisé `useFetch` pour simplifier les appels API.
 
@@ -437,11 +425,11 @@ const useFetch = (url) => {
 };
 ```
 
-#### Explications
+#### 4.1 Explications
 
 Ce hook utilise `useState` pour gérer les états de données, chargement et erreurs. `useEffect` est utilisé pour exécuter le fetch lorsque l’URL change. Ce hook peut maintenant être réutilisé dans différents composants pour faire des appels API.
 
-#### Exercice
+#### 4.1 Exercice
 
 Créer un hook personnalisé `useLocalStorage` qui permet de stocker et récupérer une valeur depuis le localStorage.
 
@@ -449,11 +437,11 @@ Créer un hook personnalisé `useLocalStorage` qui permet de stocker et récupé
 
 ### Section 4.2 : Gestion des Effets avec useEffect
 
-#### Théorie
+#### 4.2 Théorie
 
 `useEffect` est utilisé pour exécuter des effets secondaires dans les composants fonctionnels, comme les appels API, les abonnements, ou manuellement changer le DOM. Il remplace les méthodes de cycle de vie comme `componentDidMount`, `componentDidUpdate`, et `componentWillUnmount` dans les composants de classe.
 
-#### Exemple
+#### 4.2 Exemple
 
 Utilisation de `useEffect` pour mettre à jour le titre de la page en fonction du contenu d’un input.
 
@@ -475,11 +463,11 @@ const TitleComponent = () => {
 };
 ```
 
-#### Explications
+#### 4.2 Explications
 
 Dans cet exemple, à chaque fois que la valeur de `title` change, `useEffect` est appelé pour mettre à jour le titre de la page. Le tableau de dépendances `[title]` s’assure que l’effet ne s’exécute que lorsque `title` change.
 
-#### Exercice
+#### 4.2 Exercice
 
 Créer un composant qui charge des données depuis une API et les affiche, en utilisant `useEffect` pour l'appel API.
 
@@ -487,11 +475,11 @@ Créer un composant qui charge des données depuis une API et les affiche, en ut
 
 ### Section 4.3 : Contexte Avancé et Optimisation des Performances
 
-#### Théorie
+#### 4.3 Théorie
 
 Le contexte permet de partager des données entre tous les composants, sans avoir à passer explicitement les props à chaque niveau. Pour optimiser les performances, on peut utiliser `React.memo`, `useCallback` et `useMemo` pour éviter les rendus inutiles.
 
-#### Exemple
+#### 4.3 Exemple
 
 Création d’un contexte pour gérer un thème (clair/sombre) dans une application.
 
@@ -513,11 +501,11 @@ const ThemeProvider = ({ children }) => {
 };
 ```
 
-#### Explications
+#### 4.3 Explications
 
 `ThemeContext` est un contexte qui contient le thème actuel et une fonction pour le changer. `ThemeProvider` est un composant qui englobe les composants enfants et leur fournit l’accès au contexte.
 
-#### Exercice
+#### 4.3 Exercice
 
 Implémenter un composant `Header` qui change de couleur en fonction du thème et un bouton pour changer le thème, en utilisant `ThemeContext`.
 
@@ -667,15 +655,15 @@ J'espère que cela donne une vue détaillée de la section 6.1 concernant les te
 
 #### Section 6.2.1 : Structure et Organisation du Projet
 
-##### Théorie
+##### 6.2.1 Théorie
 
 Une structure de projet cohérente est essentielle pour la maintenabilité et la lisibilité du code. Il est recommandé de séparer les composants, les styles, les tests, et les ressources dans des dossiers distincts.
 
-##### Exemple
+##### 6.2.1 Exemple
 
 - Structure recommandée :
 
-  ```
+  ```text
   src/
   ├── components/
   ├── styles/
@@ -685,21 +673,21 @@ Une structure de projet cohérente est essentielle pour la maintenabilité et la
 
 - Chaque composant devrait avoir son propre dossier contenant le fichier JSX et le fichier de style associé.
 
-##### Explication
+##### 6.2.1 Explication
 
 Cette structure permet une navigation facile dans le projet et rend le code plus accessible, en particulier pour les nouveaux développeurs qui rejoignent le projet.
 
-##### Exercice
+##### 6.2.1 Exercice
 
 Prenez un projet React existant avec une structure désorganisée. Réorganisez-le en suivant la structure recommandée.
 
 #### Section 6.2.2 : Réutilisation des Composants et Props
 
-##### Théorie
+##### 6.2.2 Théorie
 
 La réutilisation des composants permet de réduire la duplication de code et d’améliorer la maintenabilité. Les props permettent de passer des données et des fonctions entre les composants.
 
-##### Exemple
+##### 6.2.2 Exemple
 
 Création d'un composant `Button` réutilisable :
 
@@ -713,21 +701,21 @@ function Button({ children, onClick }) {
 }
 ```
 
-##### Explication
+##### 6.2.2 Explication
 
 Ce composant `Button` peut être utilisé à plusieurs endroits dans l'application avec différents contenus et comportements, grâce à l’utilisation des props.
 
-##### Exercice
+##### 6.2.2 Exercice
 
 Identifiez un élément qui se répète dans votre application (par exemple, une carte d’article, un en-tête, etc.) et transformez-le en composant réutilisable.
 
 #### Section 6.2.3 : Gestion Efficace des États et Performance
 
-##### Théorie
+##### 6.2.3 Théorie
 
 La gestion efficace des états est cruciale pour la performance de l'application. Utilisez les hooks d'état (useState, useReducer) à bon escient et évitez les mises à jour inutiles.
 
-##### Exemple
+##### 6.2.3 Exemple
 
 Utilisation de `React.memo` pour éviter des rendus inutiles :
 
@@ -737,48 +725,48 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-##### Explication
+##### 6.2.3 Explication
 
 `React.memo` est une optimisation de performance qui permet à votre composant de ne se rerendre que si les props ont changé.
 
-##### Exercice
+##### 6.2.3 Exercice
 
 Prenez un composant de votre application qui se rend souvent et appliquez `React.memo`. Comparez les performances avant et après.
 
 #### Section 6.2.4 : L’Importance des Tests
 
-##### Théorie
+##### 6.2.4 Théorie
 
 Les tests aident à prévenir les régressions et à s'assurer que le code fonctionne comme prévu. Ils devraient faire partie intégrante du processus de développement.
 
-##### Exemple
+##### 6.2.4 Exemple
 
 Écrire un test pour vérifier qu'un composant affiche le bon message lorsque l'état change.
 
-##### Explication
+##### 6.2.4 Explication
 
 Ce test garantit que le composant se comporte correctement même après des modifications ultérieures du code.
 
-##### Exercice
+##### 6.2.4 Exercice
 
 Prenez un composant qui n’a pas de test dans votre application et rédigez un test unitaire pour celui-ci.
 
 #### Section 6.2.5 : Bonnes Pratiques de Codage
 
-##### Théorie
+##### 6.2.5 Théorie
 
 Des pratiques de codage telles que la décomposition des composants en petites unités, l’utilisation de commentaires où nécessaire, et le respect des conventions de nommage, sont cruciales pour la lisibilité et la maintenabilité du code.
 
-##### Exemple
+##### 6.2.5 Exemple
 
 - Découper un grand composant en sous-composants plus petits et réutilisables.
 - Utiliser des noms descriptifs pour les fonctions et les variables.
 
-##### Explication
+##### 6.2.5 Explication
 
 Cela facilite la compréhension et la modification du code par vous-même ou par d'autres développeurs à l'avenir.
 
-##### Exercice
+##### 6.2.5 Exercice
 
 Prenez un grand composant de votre application et décomposez-le en sous-composants plus petits. Assurez-vous également que le nommage est clair et descriptif.
 
@@ -836,11 +824,11 @@ Déployez une application React sur Netlify. Modifiez ensuite quelque chose dans
 
 #### Section 7.1.1 : Comprendre JSX
 
-##### Théorie
+##### 7.1.1 Théorie
 
 JSX est une extension syntaxique pour JavaScript, recommandée par React pour décrire l'interface utilisateur. Il ressemble à du HTML, mais fonctionne avec la puissance de JavaScript.
 
-##### Exemple de Question
+##### 7.1.1 Exemple de Question
 
 **Q :** Expliquez ce qu’est JSX et pourquoi il est utilisé dans React.
 
@@ -850,11 +838,11 @@ JSX est une extension syntaxique pour JavaScript, recommandée par React pour d�
 
 #### Section 7.1.2 : Composants, État et Props
 
-##### Théorie
+##### 7.1.2 Théorie
 
 Dans React, les composants sont les éléments de base de toute application. L’état (state) et les props sont des concepts essentiels pour gérer les données dans et entre les composants.
 
-##### Exemple de Question
+##### 7.1.2 Exemple de Question
 
 **Q :** Quelle est la différence entre l’état (state) et les props dans React ?
 
@@ -864,11 +852,11 @@ Dans React, les composants sont les éléments de base de toute application. L�
 
 #### Section 7.1.3 : Lifecycle et Hooks
 
-##### Théorie
+##### 7.1.3 Théorie
 
 Le cycle de vie d'un composant React décrit les différentes étapes de sa vie, depuis sa création jusqu'à sa destruction. Les Hooks, introduits dans React 16.8, permettent d’utiliser l’état et d’autres fonctionnalités de React sans écrire de classe.
 
-##### Exemple de Question
+##### 7.1.3 Exemple de Question
 
 **Q :** Pouvez-vous expliquer le cycle de vie d’un composant en React et l'utilisation des Hooks ?
 
@@ -878,11 +866,11 @@ Le cycle de vie d'un composant React décrit les différentes étapes de sa vie,
 
 #### Section 7.1.4 : Gestion de l'État et Patterns
 
-##### Théorie
+##### 7.1.4 Théorie
 
 La gestion de l'état est cruciale dans les applications React. Des patterns comme la remontée d'état (lifting state up) et l'utilisation de contextes ou de bibliothèques comme Redux sont essentiels.
 
-##### Exemple de Question
+##### 7.1.4 Exemple de Question
 
 **Q :** Comment gérez-vous l'état dans une application React complexe ?
 
@@ -892,7 +880,7 @@ La gestion de l'état est cruciale dans les applications React. Des patterns com
 
 #### Section 7.1.5 : Performances et Optimisation
 
-##### Théorie
+##### 7.1.5 Théorie
 
 L'optimisation des performances est un aspect crucial, notamment pour les grandes applications. La compréhension de la réconciliation, l'utilisation judicieuse de `React.memo`, et le fractionnement de code sont des éléments clés.
 
@@ -904,65 +892,9 @@ L'optimisation des performances est un aspect crucial, notamment pour les grande
 
 ---
 
-#### Section 7.1.2 : Composants, État et Props
-
-##### Théorie
-
-Dans React, les composants sont les éléments de base de toute application. L’état (state) et les props sont des concepts essentiels pour gérer les données dans et entre les composants.
-
-##### Exemple de Question
-
-**Q :** Quelle est la différence entre l’état (state) et les props dans React ?
-
-**R :** L’état représente les données qui peuvent changer au cours du temps dans un composant. Les props sont des données passées au composant par un parent et sont immuables dans le contexte du composant enfant. L'état est local au composant, tandis que les props sont utilisées pour communiquer entre les composants.
-
----
-
-#### Section 7.1.3 : Lifecycle et Hooks
-
-##### Théorie
-
-Le cycle de vie d'un composant React décrit les différentes étapes de sa vie, depuis sa création jusqu'à sa destruction. Les Hooks, introduits dans React 16.8, permettent d’utiliser l’état et d’autres fonctionnalités de React sans écrire de classe.
-
-##### Exemple de Question
-
-**Q :** Pouvez-vous expliquer le cycle de vie d’un composant en React et l'utilisation des Hooks ?
-
-**R :** Un composant React passe par plusieurs étapes : montage, mise à jour et démontage. Les méthodes du cycle de vie comme `componentDidMount`, `componentDidUpdate`, et `componentWillUnmount` permettent de gérer les comportements à ces différentes étapes. Avec l'introduction des Hooks, on utilise `useEffect` pour gérer les effets secondaires, `useState` pour l'état local, entre autres.
-
----
-
-#### Section 7.1.4 : Gestion de l'État et Patterns
-
-##### Théorie
-
-La gestion de l'état est cruciale dans les applications React. Des patterns comme la remontée d'état (lifting state up) et l'utilisation de contextes ou de bibliothèques comme Redux sont essentiels.
-
-##### Exemple de Question
-
-**Q :** Comment gérez-vous l'état dans une application React complexe ?
-
-**R :** Pour des applications complexes, j’utilise souvent Redux pour gérer un état global. Pour les états locaux, j’utilise `useState` ou `useReducer`. Pour partager l’état entre des composants proches, la remontée d’état ou l’utilisation de l’API Context de React peut être une bonne solution.
-
----
-
-#### Section 7.1.5 : Performances et Optimisation
-
-##### Théorie
-
-L'optimisation des performances est un aspect crucial, notamment pour les grandes applications. La compréhension de la réconciliation, l'utilisation judicieuse de `React.memo`, et le fractionnement de code sont des éléments clés.
-
-##### Exemple de Question
-
-**Q :** Comment optimisez-vous les performances dans une application React ?
-
-**R :** Pour optimiser les performances, j’utilise `React.memo` pour éviter les rendus inutiles, `useCallback` et `useMemo` pour mémoriser des fonctions et valeurs. Je fais également attention à la structure des composants pour éviter les re-rendus inutiles et j’utilise le fractionnement de code pour charger des ressources seulement lorsque c’est nécessaire
-
----
-
 ### Section 7.2 : Cas d'Usage et Projets à Présenter
 
-#### Théorie
+#### 7.2  Théorie
 
 Pour se démarquer lors d'un entretien, il est essentiel de pouvoir discuter de cas d'utilisation concrets et de présenter des projets personnels ou professionnels où vous avez utilisé ReactJS. Cela montre non seulement votre compréhension théorique, mais aussi votre capacité à appliquer ces connaissances dans des scénarios pratiques.
 
@@ -970,22 +902,22 @@ Pour se démarquer lors d'un entretien, il est essentiel de pouvoir discuter de 
 
 #### Section 7.2.1 : Application E-commerce
 
-##### Description du Projet
+##### 7.2.1 Description du Projet
 
 Développement d'une interface utilisateur pour un site e-commerce. Le projet implique l'utilisation de React pour gérer les interactions utilisateur, comme la navigation entre les produits, l'ajout d'articles au panier, et le processus de paiement.
 
-##### Points Clés à Discuter
+##### 7.2.1 Points Clés à Discuter
 
 - **Gestion de l'État Global :** Utilisation de Redux ou de la Context API pour gérer l'état global de l'application, comme le panier d'achat et les informations utilisateur.
 - **Optimisation des Performances :** Mise en œuvre de `React.memo` et `useCallback` pour éviter les rendus inutiles, en particulier dans les listes de produits.
 - **Navigation :** Utilisation de React Router pour gérer la navigation entre différentes pages et composants.
 
-##### Exemple d'Implémentation
+##### 7.2.1 Exemple d'Implémentation
 
 - Montrez comment vous avez structuré les composants de votre application, en expliquant pourquoi vous avez choisi cette architecture.
 - Discutez d'un défi spécifique rencontré, par exemple la gestion de l'état du panier sur plusieurs pages, et comment vous l'avez résolu.
 
-##### Exercice
+##### 7.2.1 Exercice
 
 Analysez une fonctionnalité de votre application e-commerce, comme la page de détails du produit. Comment pourriez-vous l'améliorer ou la rendre plus performante ?
 
@@ -993,22 +925,22 @@ Analysez une fonctionnalité de votre application e-commerce, comme la page de d
 
 #### Section 7.2.2 : Application de Gestion de Tâches
 
-##### Description du Projet
+##### 7.2.2 Description du Projet
 
 Création d'une application de gestion de tâches permettant aux utilisateurs de créer, trier, filtrer et marquer des tâches comme complétées. Le projet comprend également des fonctionnalités d'authentification et de stockage des tâches.
 
-##### Points Clés à Discuter
+##### 7.2.2 Points Clés à Discuter
 
 - **Hooks Personnalisés :** Utilisation de Hooks personnalisés pour extraire et réutiliser la logique métier.
 - **Intégration Backend :** Communication avec une API backend pour la persistance des tâches.
 - **Tests Unitaires :** Mise en place de tests unitaires avec Jest et React Testing Library pour assurer la fiabilité du code.
 
-##### Exemple d'Implémentation
+##### 7.2.2 Exemple d'Implémentation
 
 - Présentez la structure de vos composants et comment les Hooks personnalisés ont aidé à simplifier votre code.
 - Expliquez un problème spécifique, tel que la gestion des états de chargement et d'erreur lors des requêtes API, et comment vous l'avez adressé.
 
-##### Exercice
+##### 7.2.2 Exercice
 
 Prenez une fonctionnalité de l'application, comme le filtre des tâches, et réfléchissez à comment vous pourriez l'améliorer en termes d'expérience utilisateur ou de performance.
 
@@ -1026,15 +958,15 @@ Lorsque vous présentez ces projets lors de votre entretien, assurez-vous de bie
 
 #### Section 7.3.1 : La Composition par Rapport à l'Héritage
 
-##### Théorie
+##### 7.3.1 Théorie
 
 En React, la composition est préférée à l'héritage pour réutiliser le code entre les composants. Cela permet une plus grande flexibilité et une meilleure encapsulation.
 
-##### Exemple
+##### 7.3.1 Exemple
 
 - **Cas de Composition :** Utilisation de composants enfants pour personnaliser un composant de 'Layout'. Au lieu d'étendre la classe 'Layout', vous pouvez passer les composants 'Header' et 'Footer' en tant que props.
 
-##### Exercice
+##### 7.3.1 Exercice
 
 Créez un composant 'Page' qui accepte des composants 'Header', 'Main' et 'Footer' en tant que props et les affiche. Réfléchissez à la manière dont cela offre plus de flexibilité qu'une approche basée sur l'héritage.
 
@@ -1042,16 +974,16 @@ Créez un composant 'Page' qui accepte des composants 'Header', 'Main' et 'Foote
 
 #### Section 7.3.2 : Immutabilité de l’État
 
-##### Théorie
+##### 7.3.2 Théorie
 
 L'état dans React doit être traité comme immuable. La modification directe de l'état peut conduire à des comportements incohérents et des bugs difficiles à déceler.
 
-##### Exemple
+##### 7.3.2 Exemple
 
 - **Mauvaise Pratique :** `this.state.items.push(newItem)` est une mauvaise pratique car elle modifie directement l'état.
 - **Bonne Pratique :** Utilisez `this.setState({ items: [...this.state.items, newItem] })` pour maintenir l'immutabilité.
 
-##### Exercice
+##### 7.3.2 Exercice
 
 Prenez un composant qui modifie directement son état. Refactorez-le pour assurer l'immutabilité de l'état. Observez les changements dans le comportement du composant.
 
@@ -1059,16 +991,16 @@ Prenez un composant qui modifie directement son état. Refactorez-le pour assure
 
 #### Section 7.3.3 : Utilisation de Fragments et d'Attributs Clés
 
-##### Théorie
+##### 7.3.3 Théorie
 
 Les fragments permettent de regrouper une liste d'éléments sans ajouter de nœuds supplémentaires au DOM. L'utilisation de clés uniques est cruciale pour l'efficacité du processus de réconciliation de React, en particulier dans les listes.
 
-##### Exemple
+##### 7.3.3 Exemple
 
 - **Fragment :** `<React.Fragment>...</React.Fragment>` ou la syntaxe courte `<>...</>` pour envelopper une liste de composants frères sans élément parent supplémentaire.
 - **Clés :** Dans une liste, utilisez des clés uniques pour chaque élément. Par exemple, `<li key={item.id}>...</li>`.
 
-##### Exercice
+##### 7.3.3 Exercice
 
 Créez une liste de composants en utilisant des fragments. Ajoutez ensuite des clés uniques à chaque élément de la liste et observez comment cela affecte le rendu et les performances lors de la mise à jour de la liste.
 
@@ -1076,16 +1008,16 @@ Créez une liste de composants en utilisant des fragments. Ajoutez ensuite des c
 
 #### Section 7.3.4 : Optimisation des Performances avec React.memo et useCallback
 
-##### Théorie
+##### 7.3.4 Théorie
 
 `React.memo` est un HOC (Higher-Order Component) qui optimise les composants fonctionnels en évitant les rendus inutiles. `useCallback` est un Hook qui retourne une version mémorisée d'une fonction de rappel.
 
-##### Exemple
+##### 7.3.4 Exemple
 
 - **React.memo :** Utilisez `React.memo` pour envelopper un composant qui n’a pas besoin d’être rendu si ses props n'ont pas changé.
 - **useCallback :** Utilisez `useCallback` pour des fonctions passées en tant que props aux composants enfants pour éviter des rendus inutiles.
 
-##### Exercice
+##### 7.3.4 Exercice
 
 Identifiez un composant dans votre application qui se rend souvent sans raison. Appliquez `React.memo` et utilisez `useCallback` pour les fonctions passées en tant que props. Mesurez les améliorations de performance.
 
@@ -1093,14 +1025,14 @@ Identifiez un composant dans votre application qui se rend souvent sans raison. 
 
 #### Section 7.3.5 : Séparation des Préoccupations
 
-##### Théorie
+##### 7.3.5 Théorie
 
 La séparation des préoccupations implique de diviser un programme en sections distinctes, chacune traitant d'une préoccupation distincte. En React, cela se traduit souvent par la séparation de la logique métier des composants de présentation.
 
-##### Exemple
+##### 7.3.5 Exemple
 
 - **Cas Pratique :** Un composant 'UserList' qui à la fois récupère des données utilisateur et les affiche. Séparez la logique de récupération des données dans un Hook personnalisé ou un composant de conteneur, laissant 'UserList' se concentrer uniquement sur la présentation.
 
-##### Exercice
+##### 7.3.5 Exercice
 
 Prenez un composant 'monolithique' de votre code. Séparez les préoccupations en extrayant la logique d'affaires, la gestion de l'état et les appels API dans des Hooks personnalisés ou des composants de conteneur. Observez comment cette séparation améliore la lisibilité et la maintenabilité du code.
